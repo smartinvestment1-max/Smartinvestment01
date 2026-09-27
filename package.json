@@ -1,7 +1,11 @@
 {
-  "name": "smartinvestment-admin",
+  "name": "smartinvestment-platform",
   "version": "1.0.0",
   "private": true,
-  "scripts": { "dev": "vite --host 0.0.0.0 --port 5174", "build": "vite build", "preview": "vite preview --host 0.0.0.0 --port 5174" },
-  "devDependencies": { "vite": "^7.1.7" }
+  "description": "SmartInvestment client + admin + secure backend",
+  "scripts": {
+    "install:all": "npm install --prefix backend && npm install --prefix client && npm install --prefix admin",
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix client\" \"npm run dev --prefix admin\""
+  },
+  "devDependencies": { "concurrently": "^9.2.1" }
 }
